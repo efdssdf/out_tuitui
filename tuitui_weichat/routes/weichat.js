@@ -732,7 +732,7 @@ function getJingdong(config, openid, text, res) {
     data.openid = openid;
     data.code = config.code;
     data.title = text.split('product/')[1].split('.')[0];
-    request.post('http://io.rrdtjj.top/message/jingdong', {form: data}, function (err, response) {
+    request.post('http://cusio.oorggt.top/message/jingdong', {form: data}, function (err, response) {
     })
 }
 
@@ -771,12 +771,12 @@ function getTaobaoke_byCode(config, openid, text, res) {
         console.log('url---------------' + str_url);
         TaobaoUtil.request_taobao_url(str_url, function (err, url) {
             if (err || !url) {
-                request.post('http://io.rrdtjj.top/message/taobaoke', {form: data}, function (err, response) {
+                request.post('http://cusio.oorggt.top/message/taobaoke', {form: data}, function (err, response) {
                 })
                 // MessageServer.getInstance(null).req_title_token(data);
             } else {
                 data.title = url;
-                request.post('http://io.rrdtjj.top/message/taobaoke', {form: data}, function (err, response) {
+                request.post('http://cusio.oorggt.top/message/taobaoke', {form: data}, function (err, response) {
                 })
                 // MessageServer.getInstance(null).req_title_token(data);
             }
@@ -787,23 +787,23 @@ function getTaobaoke_byCode(config, openid, text, res) {
         console.log('code---------------' + code);
         /*TaobaoUtil.request_taobao_token(code, function (err, url) {
          if (err || !url) {
-         request.post('http://io.rrdtjj.top/message/taobaoke',{form:data},function(err,response){
+         request.post('http://cusio.oorggt.top/message/taobaoke',{form:data},function(err,response){
          })
          // MessageServer.getInstance(null).req_title_token(data);
          } else {
          data.title = url;
-         request.post('http://io.rrdtjj.top/message/taobaoke',{form:data},function(err,response){
+         request.post('http://cusio.oorggt.top/message/taobaoke',{form:data},function(err,response){
          })
          // MessageServer.getInstance(null).req_title_token(data);
          }
          });*/
         console.log('--------search title--------')
-        request.post('http://io.rrdtjj.top/message/taobaoke', {form: data}, function (err, response) {
+        request.post('http://cusio.oorggt.top/message/taobaoke', {form: data}, function (err, response) {
         })
     } else {
         data.title = text
         console.log('--------search title--------')
-        request.post('http://io.rrdtjj.top/message/taobaoke', {form: data}, function (err, response) {
+        request.post('http://cusio.oorggt.top/message/taobaoke', {form: data}, function (err, response) {
         })
         // MessageServer.getInstance(null).req_title_token(data);
     }
@@ -821,7 +821,7 @@ function getTaobaoke(config, openid, text, res) {
             data = result.data;
             data.openid = openid;
             data.code = config.code;
-            request.post('http://io.rrdtjj.top/message/taobaoke', {form: data}, function (err, response) {
+            request.post('http://cusio.oorggt.top/message/taobaoke', {form: data}, function (err, response) {
             })
             // MessageServer.getInstance(null).req_token(data);
         } else {

@@ -1,2 +1,1 @@
-# tuitui
-out_
+# out_tuitui

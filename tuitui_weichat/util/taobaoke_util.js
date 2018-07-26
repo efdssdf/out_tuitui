@@ -161,7 +161,7 @@ function get_baokuang(obj){
 	var itemid = tmp_arr[1].split('&')[0];
 	obj.url = obj.url.split('?')[0]+'?id='+itemid;
 	console.log(obj)
-    request.post('http://io.rrdtjj.top/message/baokuan',{form:obj},function(err,response){
+    request.post('http://cusio.oorggt.top/message/baokuan',{form:obj},function(err,response){
     })
     // MessageServer.getInstance(null).get_one_baokuan(obj)
 }
