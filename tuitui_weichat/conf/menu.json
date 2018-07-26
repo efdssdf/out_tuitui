@@ -1,0 +1,29 @@
+{
+  "13": {
+    "button": [
+    ]
+  },
+  "17": {
+    "button": [
+      {
+        "type":"view",
+        "name":"优惠总库",
+        "url":"http://wonderfulgame.m.oorggt.top/"
+      }
+    ]
+  },
+  "26":{
+  	"button":[
+  		{
+  			"type":"click",
+  			"name":"0元领",
+  			"key":"KEY_ZERO_LING"
+  		},
+  		{
+  			"type":"click",
+  			"name":"查进度",
+  			"key":"KEY_ZERO_PROC"
+  		}
+  	]
+  }
+}
