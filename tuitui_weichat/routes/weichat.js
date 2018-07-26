@@ -124,7 +124,7 @@ router.use('/:code', function (request, response, next_fun) {
                             } else if (/^[\s\S]{10,60}$/.test(text)) {
                                 getTaobaoke_byCode(config, openid, text, res);
                             } else if (text == '提现测试') {
-                                res.reply('<a href="http://www.rrdtjj.top/alipay/redirect/' + request.params.code + '">点击链接提现</a>')
+                                res.reply('<a href="http://custuitui.oorggt.top/alipay/redirect/' + request.params.code + '">点击链接提现</a>')
                             } else if (text == '测试openid') {
                                 res.reply(openid);
                             } else {
@@ -211,25 +211,16 @@ async function subscribe(openid, config, message, res) {
             }
         })
     }else{
-        var code_list = book_wechat_conf.book_wechat_list;
-        if (config.sub_replay == 0) {
-            if (code_list.indexOf(config.code) == -1) {
-                res.reply('');
+        if (config.sub_replay == 1) {
+            if (config.replay_text) {
+                res.reply(config.replay_text);
+            } else if (message.Ticket) {
+                bind_user(openid, config.code, message.Ticket, res)
             } else {
-                if (config.replay_text) {
-                    res.reply(config.replay_text);
-                } else if (message.Ticket) {
-                    bind_user(openid, config.code, message.Ticket, res)
-                } else {
-                    res.reply('省钱助手欢迎您！\r\n一一一一🍒使用攻略一一一一\r\n<搜索优惠>回复：搜索+商品名称\r\n<指定商品优惠查询>请将淘宝商品分享给我！\r\n文字教程：https://w.url.cn/s/ALbRRgu\r\n视频教程：https://w.url.cn/s/ASjqD5J\r\n账户信息请回复：个人信息\r\n邀请好友请回复：邀请好友\r\n订单查询请回复：订单\r\n余额提现请回复：提现\r\n详细教程请回复：帮助\r\n')
-                }
+                res.reply('省钱助手欢迎您！\r\n一一一一🍒使用攻略一一一一\r\n<搜索优惠>回复：搜索+商品名称\r\n<指定商品优惠查询>请将淘宝商品分享给我！\r\n文字教程：https://w.url.cn/s/ALbRRgu\r\n视频教程：https://w.url.cn/s/ASjqD5J\r\n账户信息请回复：个人信息\r\n邀请好友请回复：邀请好友\r\n订单查询请回复：订单\r\n余额提现请回复：提现\r\n详细教程请回复：帮助\r\n')
             }
-        } else {
-            var book_id = book_wechat_conf.book_wechat_map[request.params.code];
-            replay_book(book_id, message, res);
-            if (message.Ticket) {
-                getXiaoshuo(message, request.params.code);
-            }
+        }else{
+            res.reply('');
         }
     }
 }
@@ -577,7 +568,7 @@ function cash(code, openid, res) {
             res.reply('您的余额为【' + current_balance.toFixed(2) + '】元，要达到【1.0】元才可以提现哦！');
         } else {
             var str = '余额超过1元，可以申请提现！\r\n━┉┉┉┉∞┉┉┉┉━┉━━\r\n' +
-                '<a href="http://www.rrdtjj.top/alipay/redirect/' + code + '">点我提现</a>\r\n' +
+                '<a href="http://custuitui.oorggt.top/alipay/redirect/' + code + '">点我提现</a>\r\n' +
                 '━┉┉┉┉∞┉┉┉┉━┉━━\r\n申请提现后，24小时内提现到账！'
             res.reply(str);
         }
