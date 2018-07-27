@@ -42,9 +42,9 @@ function getuserQr(code,openid,next){
         if(err){
             console.log(err);
         }
-        if(ticket) {
-            next(null, ticket.split('_')[1]);
-        }else{
+        // if(ticket) {
+        //     next(null, ticket.split('_')[1]);
+        // }else{
             var client = getClient(code);
             client.createTmpQRCode(content,2592000,function(err,result){
                 if(err){
@@ -55,7 +55,7 @@ function getuserQr(code,openid,next){
                 memcached.set('user_'+result.ticket,content,2592000,function(err){});
                 next(null,result.ticket);
             });
-        }
+        // }
     });
 }
 
