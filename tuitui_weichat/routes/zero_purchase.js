@@ -247,9 +247,6 @@ async function get_key(openid, config, message, res) {
         res.reply('')
         //res.reply('回复“0”参与活动')
         await get_img(openid, config);
-    } else if (message.EventKey == 'KEY_HEZUO') {
-        console.log('-------------aaa')
-        res.reply('联系qq：177795800')
     } else if (message.EventKey == 'KEY_ZERO_PROC') {
         res.reply('')
         var auth = await ZeroAuthorityModel.findOne({openid: openid, action: zero_conf[config.code].index});

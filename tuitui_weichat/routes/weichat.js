@@ -142,6 +142,9 @@ router.use('/:code', function (request, response, next_fun) {
                             if (message.EventKey == 'KEY_ZERO_LING' || message.EventKey == 'KEY_ZERO_PROC') {
                                 return purchase.get_key(openid, config, message, res)
                             }
+                            if (message.EventKey == 'HEZUO') {
+                                res.reply('联系qq：177795800')
+                            }
                             if (message.EventKey == 'KEY_GERENZHONGXIN') {
                                 res.reply('省钱助手欢迎您！\r\n一一一一🍒使用攻略一一一一\r\n<搜索优惠>回复：搜索+商品名称\r\n<指定商品优惠查询>请将淘宝商品分享给我！\r\n文字教程：https://w.url.cn/s/ALbRRgu\r\n视频教程：https://w.url.cn/s/ASjqD5J\r\n账户信息请回复：个人信息\r\n邀请好友请回复：邀请好友\r\n订单查询请回复：订单\r\n余额提现请回复：提现\r\n详细教程请回复：帮助\r\n')
                             } else if (message.EventKey == 'KEY_MEITAO') {
