@@ -142,7 +142,7 @@ router.use('/:code', function (request, response, next_fun) {
                             if (message.EventKey == 'KEY_ZERO_LING' || message.EventKey == 'KEY_ZERO_PROC') {
                                 return purchase.get_key(openid, config, message, res)
                             }
-                            if (message.EventKey == 'KEY_HEZUO') {
+                            if (message.EventKey == 'KEY_SHANGWUHEZUO') {
                                 res.reply('联系qq：177795800')
                             }
                             if (message.EventKey == 'KEY_GERENZHONGXIN') {
@@ -158,17 +158,17 @@ router.use('/:code', function (request, response, next_fun) {
                                 } else {
                                     res.reply('');
                                 }
-                            // } else if (message.EventKey == 'KEY_HEZUO') {
-                            //     if (request.params.code == 3) {
-                            //         res.reply({
-                            //             type: "image",
-                            //             content: {
-                            //                 mediaId: 'Za0yRodBTW-tqxBDZL73BAOXP3XOsqh2tcFKwc3kkyc'
-                            //             }
-                            //         });
-                            //     } else {
-                            //         res.reply('');
-                            //     }
+                            } else if (message.EventKey == 'KEY_HEZUO') {
+                                if (request.params.code == 3) {
+                                    res.reply({
+                                        type: "image",
+                                        content: {
+                                            mediaId: 'Za0yRodBTW-tqxBDZL73BAOXP3XOsqh2tcFKwc3kkyc'
+                                        }
+                                    });
+                                } else {
+                                    res.reply('');
+                                }
                             } else if (message.EventKey == 'KEY_MIANFEI_XIAOSHUO') {
                                 console.log('--------menu key -------KEY_MIANFEI_XIAOSHUO-------------')
                                 var str = '路过爱情路过你\r\nhttps://wxda665769f7778172.youshuge.com/guide/read/2897/7666/2819717/418763\r\n' +
