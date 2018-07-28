@@ -142,8 +142,7 @@ router.use('/:code', function (request, response, next_fun) {
                             if (message.EventKey == 'KEY_ZERO_LING' || message.EventKey == 'KEY_ZERO_PROC') {
                                 return purchase.get_key(openid, config, message, res)
                             }
-                            console.log(message.EventKey,'-------------------message.EventKey')
-                            if (message.EventKey == 'HEZUO') {
+                            if (message.EventKey == 'KEY_HEZUO') {
                                 res.reply('联系qq：177795800')
                             }
                             if (message.EventKey == 'KEY_GERENZHONGXIN') {
