@@ -7,8 +7,18 @@
     "button": [
       {
         "type":"view",
-        "name":"优惠总库",
+        "name":"领券购物",
         "url":"http://wonderfulgame.m.oorggt.top/"
+      },
+      {
+        "type":"view",
+        "name":"点击领纸",
+        "url":"https://wx.xy6464.com/c.jsp?gzhid=702"
+      },
+      {
+        "type":"click",
+        "name":"商务合作",
+        "key":"KEY_HEZUO"
       }
     ]
   },
